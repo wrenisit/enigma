@@ -8,4 +8,9 @@ class EncryptionKeyTest < MiniTest::Test
     encryption_key = EncryptionKey.new
     assert_instance_of EncryptionKey, encryption_key
   end
+
+  def test_it_makes_random_number
+    encryption_key = EncryptionKey.new
+    assert_equal 5, encryption_key.random_number_generator.length
+  end
 end
