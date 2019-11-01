@@ -25,6 +25,6 @@ class EncryptionKeyTest < MiniTest::Test
 
   def test_it_calculates_offset_from_date
     encryption_key = EncryptionKey.new("011119")
-    assert_equal 2161, encryption_key.date_offset_calculator
+    assert_equal "2161", encryption_key.date_offset_calculator
   end
 end

@@ -11,4 +11,10 @@ class EncryptionKey
     end
     numbers_generated
   end
+
+  def date_offset_calculator
+    date = @date.to_i
+    total = (date * date).to_s
+    total[-4..-1]
+  end
 end
