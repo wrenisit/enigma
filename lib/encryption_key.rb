@@ -1,6 +1,7 @@
 class EncryptionKey
-
-  def initialize
+  attr_reader :date
+  def initialize(date)
+    @date = date
   end
 
   def random_number_generator
