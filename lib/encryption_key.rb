@@ -17,4 +17,5 @@ class EncryptionKey
     total = (date * date).to_s
     total[-4..-1]
   end
+  
 end

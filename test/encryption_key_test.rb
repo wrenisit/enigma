@@ -29,4 +29,12 @@ class EncryptionKeyTest < MiniTest::Test
     encryption_key = EncryptionKey.new("091293")
     assert_equal "1849", encryption_key.date_offset_calculator
   end
+
+  def test_it_assigns_offsets
+    encryption_key = EncryptionKey.new("011119")
+    random_number = mock(number)
+    random_number.expects(:random_number).at_least_once.returns(12345)
+    expected = [a:14 , b:24 , c:40 , d:46 ]
+    assert_equal expected, encryption_key.offset_maker
+  end
 end
