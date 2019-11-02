@@ -2,6 +2,7 @@ require 'minitest/autorun'
 require 'minitest/pride'
 require './lib/encryption_key'
 require 'pry'
+require 'mocha/minitest'
 
 class EncryptionKeyTest < MiniTest::Test
   def test_it_exists
@@ -21,5 +22,18 @@ class EncryptionKeyTest < MiniTest::Test
   def test_it_takes_a_date
     encryption_key = EncryptionKey.new("011119")
     assert_equal "011119", encryption_key.date
+  end
+
+  def test_it_calculates_offset_from_date
+    encryption_key = EncryptionKey.new("011119")
+    assert_equal "2161", encryption_key.date_offset_calculator
+    encryption_key = EncryptionKey.new("091293")
+    assert_equal "1849", encryption_key.date_offset_calculator
+  end
+
+  def test_it_assigns_offsets
+    encryption_key = EncryptionKey.new("011119")
+    expected = {a:14 , b:24 , c:40 , d:46}
+    assert_equal expected, encryption_key.offset_maker([1,2,3,4,5])
   end
 end
