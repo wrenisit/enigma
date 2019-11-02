@@ -33,9 +33,7 @@ class EncryptionKeyTest < MiniTest::Test
 
   def test_it_assigns_offsets
     encryption_key = EncryptionKey.new("011119")
-    r_number = mock
-    r_number.expects(:random_number).at_least_once.returns(12345)
-    expected = [a:14 , b:24 , c:40 , d:46 ]
-    assert_equal expected, encryption_key.offset_maker
+    expected = {a:14 , b:24 , c:40 , d:46}
+    assert_equal expected, encryption_key.offset_maker([1,2,3,4,5])
   end
 end

@@ -18,4 +18,13 @@ class EncryptionKey
     total[-4..-1]
   end
 
+  def offset_maker(random_number)
+    date = date_offset_calculator
+    encryption_key = {}
+    encryption_key[:a] = (date[0].to_i + random_number[0...2].join.to_i)
+    encryption_key[:b] = (date[1].to_i + random_number[1...3].join.to_i)
+    encryption_key[:c] = (date[2].to_i + random_number[2...4].join.to_i)
+    encryption_key[:d] = (date[3].to_i + random_number[3...5].join.to_i)
+    encryption_key
+  end
 end
