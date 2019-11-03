@@ -29,5 +29,9 @@ class EncryptTest < MiniTest::Test
 
   def test_rotate_method
     assert_equal "c", @encrypt.rotate(2)
+    assert_equal "m", @encrypt.rotate(12)
+    assert_equal " ", @encrypt.rotate(26)
+    assert_equal "c", @encrypt.rotate(2)
+    assert_equal "a", @encrypt.rotate(54)
   end
 end
