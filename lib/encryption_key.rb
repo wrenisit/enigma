@@ -2,6 +2,7 @@ class EncryptionKey
   attr_reader :date
   def initialize(date)
     @date = date
+
   end
 
   def random_number_generator
@@ -18,7 +19,8 @@ class EncryptionKey
     total[-4..-1]
   end
 
-  def offset_maker(random_number)
+  def offset_maker
+    random_number = random_number_generator
     date = date_offset_calculator
     encryption_key = {}
     encryption_key[:a] = (date[0].to_i + random_number[0...2].join.to_i)
