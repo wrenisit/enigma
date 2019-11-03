@@ -35,5 +35,7 @@ class EncryptionKeyTest < MiniTest::Test
     encryption_key = EncryptionKey.new("011119")
     expected = {a:14 , b:24 , c:40 , d:46}
     assert_equal expected.count, encryption_key.offset_maker.count
+    encryption_key.stubs(:random_number_generator).returns([1,2,3,4,5])
+    assert_equal expected, encryption_key.offset_maker
   end
 end
