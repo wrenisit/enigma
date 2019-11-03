@@ -4,5 +4,4 @@ class Encrypt
     @encryption_key = encryption_key
     @message = message
   end
-
 end
