@@ -11,4 +11,5 @@ class Encrypt
     alphabet << " "
   end
 
+
 end
