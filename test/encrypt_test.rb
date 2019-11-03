@@ -31,7 +31,12 @@ class EncryptTest < MiniTest::Test
     assert_equal "c", @encrypt.rotate(2)
     assert_equal "m", @encrypt.rotate(12)
     assert_equal " ", @encrypt.rotate(26)
-    assert_equal "c", @encrypt.rotate(2)
+    assert_equal "c", @encrypt.rotate(29)
     assert_equal "a", @encrypt.rotate(54)
+  end
+
+  def test_secret_message
+    expected = "vbydbxigeiq"
+    assert_equal expected, @encryption.secret_message(@message)
   end
 end
