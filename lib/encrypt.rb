@@ -5,5 +5,10 @@ class Encrypt
     @message = message
   end
 
-  
+  def alphabet_array
+    alphabet = []
+    ("a".."z").each { |letter|  alphabet << letter }
+    alphabet << " "
+  end
+
 end

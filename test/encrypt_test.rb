@@ -21,7 +21,10 @@ class EncryptTest < MiniTest::Test
     assert_equal @message, @encrypt.message
   end
 
-  def test_it_rotates_array
-    assert_equal "c", @encrypt.rotate(2)
+  def test_it_makes_alphabet_array
+    assert_equal 27, @encrypt.alphabet_array.count
+    assert_equal "a", @encrypt.alphabet_array.first
+    assert_equal " ", @encrypt.alphabet_array.last
+
   end
 end
