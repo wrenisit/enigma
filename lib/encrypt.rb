@@ -15,4 +15,10 @@ class Encrypt
     alphabet_array
     @alphabet.rotate(number).first
   end
+
+  # def secret_message(message)
+  #   require 'pry'; binding.pry
+  #   message.chars.map do |letter|
+  #
+  # end
 end

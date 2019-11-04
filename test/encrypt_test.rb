@@ -35,8 +35,11 @@ class EncryptTest < MiniTest::Test
     assert_equal "a", @encrypt.rotate(54)
   end
 
-  def test_secret_message
-    expected = "vbydbxigeiq"
-    assert_equal expected, @encryption.secret_message(@message)
+  def test_shift_start_point
+    assert_equal 2, @encrypt.shift_start_point("c")
   end
+  # def test_secret_message
+  #   expected = "vbydbxigeiq"
+  #   assert_equal expected, @encrypt.secret_message(@message)
+  # end
 end
