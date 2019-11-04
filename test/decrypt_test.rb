@@ -7,9 +7,13 @@ require 'mocha/minitest'
 
 class DecryptTest < MiniTest::Test
   def setup
-    @message =
+    @message = "vbydbxigeiq"
     @key = EncryptionKey.new("011119")
     @key.stubs(:random_number_generator).returns([1,2,3,4,5])
     @decrypt = Decrypt.new(@key.offset_maker, @message)
+  end
+
+  def test_it_exists
+    assert_instance_of Decrypt, @decrypt
   end
 end
