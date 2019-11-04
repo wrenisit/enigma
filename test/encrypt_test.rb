@@ -37,6 +37,8 @@ class EncryptTest < MiniTest::Test
 
   def test_shift_start_point
     assert_equal 2, @encrypt.shift_start_point("c")
+    assert_equal 10, @encrypt.shift_start_point("k")
+    assert_equal 26, @encrypt.shift_start_point(" ")
   end
   # def test_secret_message
   #   expected = "vbydbxigeiq"
