@@ -16,4 +16,10 @@ class DecryptTest < MiniTest::Test
   def test_it_exists
     assert_instance_of Decrypt, @decrypt
   end
+
+  def test_it_initializes
+    assert_equal @message, @decrypt.message
+    expected = {a:14 , b:24 , c:40 , d:46}
+    assert_equal expected, @decrypt.decryption_key
+  end
 end
