@@ -1,6 +1,6 @@
 class EncryptionKey
   attr_reader :date
-  def initialize(date)
+  def initialize(date = Time.now.strftime("%d%m%y"))
     @date = date
   end
 
