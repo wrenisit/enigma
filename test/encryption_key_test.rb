@@ -42,6 +42,6 @@ class EncryptionKeyTest < MiniTest::Test
   def test_default_date
     enigma_key = EncryptionKey.new
     assert_instance_of EncryptionKey, enigma_key
-    assert_equal "041119", enigma_key.date
+    assert_equal Time.now.strftime("%d%m%y"), enigma_key.date
   end
 end
