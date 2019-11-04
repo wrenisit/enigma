@@ -16,19 +16,6 @@ module EncryptionHelpModule
     @alphabet.rotate(number).first
   end
 
-  def secret_message(message)
-    alphabet_array
-    encrypted = []
-    message.chars.map do |letter|
-     if @alphabet.include?(letter)
-       encrypted << rotate(rotate_number(letter))
-     else
-       encrypted << letter
-     end
-   end
-   encrypted.join
-  end
-
   def find_which_key_fits
     this_key = @key_letter.first
     @key_letter.rotate!
