@@ -28,4 +28,17 @@ class Encrypt
      this_key
    end
 
+   def secret_message(message)
+     alphabet_array
+     encrypted = []
+     message.chars.map do |letter|
+       if @alphabet.include?(letter)
+        rotate_number = encryption_key[find_which_key_fits] + shift_start_point(letter)
+        encrypted << rotate(rotate_number)
+      else
+        encrypted << letter
+      end
+    end
+    encrypted.join
+   end
 end
