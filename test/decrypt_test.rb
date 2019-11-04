@@ -22,4 +22,8 @@ class DecryptTest < MiniTest::Test
     expected = {a:14 , b:24 , c:40 , d:46}
     assert_equal expected, @decrypt.decryption_key
   end
+
+  def test_it_decrypts_messages
+    assert_equal "hello world", @decrypt.secret_messages(@message)
+  end
 end
