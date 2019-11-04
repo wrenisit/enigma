@@ -38,4 +38,10 @@ class EncryptionKeyTest < MiniTest::Test
     encryption_key.stubs(:random_number_generator).returns([1,2,3,4,5])
     assert_equal expected, encryption_key.offset_maker
   end
+
+  def test_default_date
+    enigma_key = EncryptionKey.new
+    assert_instance_of EncryptionKey, enigma_key
+    assert_equal "041119", enigma_key.date
+  end
 end
