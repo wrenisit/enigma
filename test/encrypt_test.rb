@@ -49,4 +49,10 @@ class EncryptTest < MiniTest::Test
     assert_equal :a, @encrypt.find_which_key_fits
   end
 
+  def test_secret_message
+    expected = "vbydbxigeiq"
+    assert_equal expected, @encrypt.secret_message(@message)
+    assert_equal "lvfes bf bamoboxk", @encrypt.secret_message("this method works")
+    assert_equal "vlajov!", @encrypt.secret_message("hooray!")
+  end
 end
