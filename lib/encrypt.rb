@@ -7,4 +7,17 @@ class Encrypt
     @message = message
     @key_letter = [:a, :b, :c, :d]
   end
+
+  def secret_message(message)
+    alphabet_array
+    encrypted = []
+    message.chars.map do |letter|
+     if @alphabet.include?(letter)
+       encrypted << rotate(rotate_number(letter))
+     else
+       encrypted << letter
+     end
+   end
+   encrypted.join
+  end
 end
