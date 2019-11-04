@@ -1,7 +1,6 @@
 require 'minitest/autorun'
 require 'minitest/pride'
 require './lib/encryption_key'
-require 'pry'
 require 'mocha/minitest'
 
 class EncryptionKeyTest < MiniTest::Test
