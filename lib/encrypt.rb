@@ -32,7 +32,7 @@ class Encrypt
      alphabet_array
      encrypted = []
      message.chars.map do |letter|
-       if @alphabet.include?(letter)
+      if @alphabet.include?(letter)
         rotate_number = encryption_key[find_which_key_fits] + shift_start_point(letter)
         encrypted << rotate(rotate_number)
       else
