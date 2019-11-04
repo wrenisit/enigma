@@ -28,11 +28,4 @@ class Encrypt
      this_key
    end
 
-  # def secret_message(message)
-  #   require 'pry'; binding.pry
-  #   message.chars.map do |letter|
-  #     shift_start_point(letter)
-  #
-  #
-  # end
 end
