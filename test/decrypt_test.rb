@@ -24,6 +24,6 @@ class DecryptTest < MiniTest::Test
   end
 
   def test_it_decrypts_messages
-    assert_equal "hello world", @decrypt.secret_messages(@message)
+    assert_equal "hello world", @decrypt.known_message(@message)
   end
 end
