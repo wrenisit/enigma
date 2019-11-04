@@ -20,9 +20,15 @@ class Encrypt
     alphabet_array
     @alphabet.find_index(letter)
   end
+
+   def find_which_key_fits
+   end
+
   # def secret_message(message)
   #   require 'pry'; binding.pry
   #   message.chars.map do |letter|
+  #     shift_start_point(letter)
+  #
   #
   # end
 end

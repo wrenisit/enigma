@@ -40,6 +40,11 @@ class EncryptTest < MiniTest::Test
     assert_equal 10, @encrypt.shift_start_point("k")
     assert_equal 26, @encrypt.shift_start_point(" ")
   end
+
+  def test_find_which_key_fits
+    assert_equal :a, @encrypt.find_which_key_fits
+  end
+
   # def test_secret_message
   #   expected = "vbydbxigeiq"
   #   assert_equal expected, @encrypt.secret_message(@message)
