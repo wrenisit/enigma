@@ -43,6 +43,10 @@ class EncryptTest < MiniTest::Test
 
   def test_find_which_key_fits
     assert_equal :a, @encrypt.find_which_key_fits
+    assert_equal :b, @encrypt.find_which_key_fits
+    assert_equal :c, @encrypt.find_which_key_fits
+    assert_equal :d, @encrypt.find_which_key_fits
+    assert_equal :a, @encrypt.find_which_key_fits
   end
 
   # def test_secret_message

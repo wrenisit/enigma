@@ -1,8 +1,9 @@
 class Encrypt
-  attr_reader :encryption_key, :message, :alphabet
+  attr_reader :encryption_key, :message, :alphabet, :key_letter
   def initialize(encryption_key, message)
     @encryption_key = encryption_key
     @message = message
+    @key_letter = [:a, :b, :c, :d]
   end
 
   def alphabet_array
@@ -22,6 +23,9 @@ class Encrypt
   end
 
    def find_which_key_fits
+     this_key = @key_letter.first
+     @key_letter.rotate!
+     this_key
    end
 
   # def secret_message(message)
