@@ -19,7 +19,6 @@ class EnigmaTest < MiniTest::Test
   end
 
   def test_it_can_encrypt
-    skip
     enigma = Enigma.new("hello", "12345", "041119")
     assert_equal "dlsuc", enigma.encrypt
   end

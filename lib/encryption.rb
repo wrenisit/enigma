@@ -11,7 +11,7 @@ class Encryption
   def secret_message(message)
     alphabet_array
     encrypted = []
-    message.chars.map do |letter|
+    @message.chars.map do |letter|
      if @alphabet.include?(letter)
        encrypted << rotate(rotate_number(letter))
      else

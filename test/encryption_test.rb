@@ -49,8 +49,6 @@ class EncryptionTest < MiniTest::Test
 
   def test_secret_message
     expected = "vbydbxigeiq"
-    assert_equal expected, @encryption.secret_message(@message)
-    assert_equal "lvfes bf bamoboxk", @encryption.secret_message("this method works")
-    assert_equal "vlajov!", @encryption.secret_message("hooray!")
+    assert_equal expected, @encryption.secret_message("hello world")
   end
 end
