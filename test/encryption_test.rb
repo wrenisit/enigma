@@ -1,9 +1,7 @@
-require 'minitest/autorun'
-require 'minitest/pride'
+require_relative 'test_helper'
 require './lib/encryption'
 require './lib/encryption_key'
-require 'pry'
-require 'mocha/minitest'
+
 
 class EncryptionTest < MiniTest::Test
   def setup
