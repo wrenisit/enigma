@@ -1,5 +1,5 @@
 require_relative "encryption_help_module"
-class Encrypt
+class Encryption
   include EncryptionHelpModule
   attr_reader :encryption_key, :message, :alphabet, :key_letter
   def initialize(encryption_key, message)
