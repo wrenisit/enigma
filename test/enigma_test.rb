@@ -9,7 +9,7 @@ require 'mocha/minitest'
 
 class EnigmaTest < MiniTest::Test
   def test_it_exists
-    enigma = Enigma.new
+    enigma = Enigma.new("hello", "12345", "041119")
     assert_instance_of Enigma, enigma
   end
 
@@ -18,5 +18,10 @@ class EnigmaTest < MiniTest::Test
     assert_equal "hello", enigma.message
     assert_equal "12345", enigma.key
     assert_equal "041119", enigma.date
+  end
+
+  def test_it_can_encrypt
+    enigma = Enigma.new("hello", "12345", "041119")
+    assert_equal "dlsuc", enigma.encrypt
   end
 end
