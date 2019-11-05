@@ -26,11 +26,11 @@ class EncryptionTest < MiniTest::Test
   end
 
   def test_rotate_method
-    assert_equal "c", @encryption.rotate(2)
-    assert_equal "m", @encryption.rotate(12)
-    assert_equal " ", @encryption.rotate(26)
-    assert_equal "c", @encryption.rotate(29)
-    assert_equal "a", @encryption.rotate(54)
+    assert_equal "c", @encryption.rotation(2)
+    assert_equal "m", @encryption.rotation(12)
+    assert_equal " ", @encryption.rotation(26)
+    assert_equal "c", @encryption.rotation(29)
+    assert_equal "a", @encryption.rotation(54)
   end
 
   def test_shift_start_point
@@ -48,7 +48,7 @@ class EncryptionTest < MiniTest::Test
   end
 
   def test_secret_message
-    expected = "vbydbxigeiq"
+    expected = "kqbxrlm uxu"
     assert_equal expected, @encryption.secret_message
   end
 end
