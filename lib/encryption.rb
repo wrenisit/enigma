@@ -8,12 +8,12 @@ class Encryption
     @key_letter = [:a, :b, :c, :d]
   end
 
-  def secret_message(message)
+  def secret_message
     alphabet_array
     encrypted = []
-    message.chars.map do |letter|
+    @message.chars.map do |letter|
      if @alphabet.include?(letter)
-       encrypted << rotate(rotate_number(letter))
+       encrypted << rotation(rotate_number(letter, @encryption_key))
      else
        encrypted << letter
      end
