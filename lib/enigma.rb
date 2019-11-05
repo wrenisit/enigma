@@ -4,11 +4,13 @@ class Enigma
     @message = message
     @key = key
     @date = date
+    @encryption_key = EncryptionKey.new(@key, @date)
+    @encryption_key = @encryption_key.offset_maker
+    @encryption_work = Encryption.new(@encryption_key, @message)
   end
 
   def encrypt
-    encryption_key = EncryptionKey.new(@key, @date)
-    encryption_work = Encryption.new(encryption_key, @message)
-    encryption_work.secret_message
+    #binding.pry
+    @encryption_work.secret_message
   end
 end

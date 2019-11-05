@@ -49,6 +49,6 @@ class EncryptionTest < MiniTest::Test
 
   def test_secret_message
     expected = "vbydbxigeiq"
-    assert_equal expected, @encryption.secret_message("hello world")
+    assert_equal expected, @encryption.secret_message
   end
 end

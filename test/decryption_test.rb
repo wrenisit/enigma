@@ -5,9 +5,8 @@ require './lib/encryption_key'
 
 class DecryptionTest < MiniTest::Test
   def setup
-    @message = "vbydbxigeiq"
-    @key = EncryptionKey.new("011119")
-    @key.stubs(:random_number_generator).returns([1,2,3,4,5])
+    @message = "keder ohulw"
+    @key = EncryptionKey.new("02715", "040895")
     @decryption = Decryption.new(@key.offset_maker, @message)
   end
 
@@ -17,7 +16,8 @@ class DecryptionTest < MiniTest::Test
 
   def test_it_initializes
     assert_equal @message, @decryption.message
-    expected = {a:14 , b:24 , c:40 , d:46}
+    #binding.pry
+    expected = {:a=>3, :b=>27, :c=>73, :d=>20}
     assert_equal expected, @decryption.decryption_key
   end
 

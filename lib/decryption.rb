@@ -13,7 +13,7 @@ class Decryption
     changed_message = []
     message.chars.map do |letter|
      if @alphabet.include?(letter)
-       changed_message << rotate(shift_start_point(letter) - @decryption_key[find_which_key_fits])
+       changed_message << rotation(shift_start_point(letter) - @decryption_key[find_which_key_fits])
      else
        changed_message << letter
      end

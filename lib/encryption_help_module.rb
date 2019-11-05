@@ -11,7 +11,7 @@ module EncryptionHelpModule
     @alphabet.find_index(letter)
   end
 
-  def rotate(number)
+  def rotation(number)
     alphabet_array
     @alphabet.rotate(number).first
   end
@@ -22,7 +22,8 @@ module EncryptionHelpModule
     this_key
   end
 
-  def rotate_number(letter)
+  def rotate_number(letter, encryption_key)
+    #binding.pry
     encryption_key[find_which_key_fits] + shift_start_point(letter)
   end
 end

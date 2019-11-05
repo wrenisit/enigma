@@ -19,7 +19,9 @@ class EnigmaTest < MiniTest::Test
   end
 
   def test_it_can_encrypt
-    enigma = Enigma.new("hello", "12345", "041119")
-    assert_equal "dlsuc", enigma.encrypt
+    enigma = Enigma.new("hello world", "02715", "040895")
+    assert_equal "keder ohulw", enigma.encrypt
+    assert_equal "02715", enigma.key
+    assert_equal "040895", enigma.date
   end
 end
