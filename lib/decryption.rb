@@ -2,7 +2,7 @@ require_relative 'encryption_help_module'
 class Decryption
   include EncryptionHelpModule
   attr_reader :decryption_key, :message, :key_letter
-  def initialize(decryption_key, message)
+  def initialize(message, decryption_key, date)
     @decryption_key = decryption_key
     @message = message
     @key_letter = [:a, :b, :c, :d]
