@@ -1,3 +1,6 @@
+require './lib/encryption_key'
+require './lib/encryption'
+
 class Enigma
   attr_reader :message, :key, :date
   def initialize(message, key = random_number_generator, date = Time.now.strftime("%d%m%y"))
@@ -8,7 +11,7 @@ class Enigma
     @encryption_key = @encryption_key.offset_maker
     @encryption_work = Encryption.new(@encryption_key, @message)
   end
-  
+
   def random_number_generator
     numbers_generated = []
     5.times do |number|
