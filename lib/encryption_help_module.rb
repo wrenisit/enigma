@@ -23,7 +23,6 @@ module EncryptionHelpModule
   end
 
   def rotate_number(letter, encryption_key)
-    #binding.pry
     encryption_key[find_which_key_fits] + shift_start_point(letter)
   end
 end

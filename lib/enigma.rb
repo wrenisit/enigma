@@ -10,7 +10,6 @@ class Enigma
   end
 
   def encrypt
-    #binding.pry
     @encryption_work.secret_message
   end
 end

@@ -12,14 +12,12 @@ class Encryption
     alphabet_array
     encrypted = []
     @message.chars.map do |letter|
-      #binding.pry
      if @alphabet.include?(letter)
        encrypted << rotation(rotate_number(letter, @encryption_key))
      else
        encrypted << letter
      end
    end
-   #binding.pry
    encrypted.join
   end
 end

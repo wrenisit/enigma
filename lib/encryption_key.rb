@@ -23,7 +23,6 @@ class EncryptionKey
     date_offsets = date_offset_calculator
     encryption_key = {}
     encryption_key[:a] = (date_offsets[0].to_i + @key[0...2].to_i)
-    #binding.pry
     encryption_key[:b] = (date_offsets[1].to_i + @key[1...3].to_i)
     encryption_key[:c] = (date_offsets[2].to_i + @key[2...4].to_i)
     encryption_key[:d] = (date_offsets[3].to_i + @key[3...5].to_i)
