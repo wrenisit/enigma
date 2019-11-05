@@ -7,7 +7,7 @@ class DecryptionTest < MiniTest::Test
   def setup
     @message = "keder ohulw"
     @key = EncryptionKey.new("02715", "040895")
-    @decryption = Decryption.new(@key.offset_maker, @message)
+    @decryption = Decryption.new(@message, @key.offset_maker, @message)
   end
 
   def test_it_exists
