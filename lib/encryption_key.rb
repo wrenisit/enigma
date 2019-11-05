@@ -1,6 +1,6 @@
 class EncryptionKey
   attr_reader :date, :key
-  def initialize(key = random_number_generator.join, date = Time.now.strftime("%d%m%y"))
+  def initialize(key = random_number_generator, date = Time.now.strftime("%d%m%y"))
     @date = date
     @key = key
   end
