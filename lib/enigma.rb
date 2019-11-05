@@ -1,5 +1,7 @@
 require './lib/encryption_key'
 require './lib/encryption'
+require './lib/decryption'
+
 
 class Enigma
   attr_reader :message, :key, :date
@@ -10,6 +12,7 @@ class Enigma
     @encryption_key = EncryptionKey.new(@key, @date)
     @encryption_key = @encryption_key.offset_maker
     @encryption_work = Encryption.new(@encryption_key, @message)
+    @decryption = Decryption.new(@message, @encryption_key, @date)
   end
 
   def random_number_generator
@@ -22,5 +25,9 @@ class Enigma
 
   def encrypt
     @encryption_work.secret_message
+  end
+
+  def decrypt
+    @decryption.known_message(@message)
   end
 end
