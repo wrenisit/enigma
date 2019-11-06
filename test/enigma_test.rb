@@ -24,4 +24,10 @@ class EnigmaTest < MiniTest::Test
     assert_equal "02715", enigma.key
     assert_equal "040895", enigma.date
   end
+
+  def test_random_number_generator
+    enigma = Enigma.new("hello world")
+    assert_equal String, enigma.random_number_generator.class
+  end
+
 end
